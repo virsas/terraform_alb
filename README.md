@@ -32,7 +32,7 @@ variable "alb_main" {
 # Module
 ##############
 module "alb_main" {
-  source = "github.com/virsas/terraform_alb_application"
+  source = "git::https://github.com/virsas/terraform_alb_application.git?ref=v1.0.0"
   instance = var.alb_main
   security_groups = [ module.vpc_sg_admin.id, module.vpc_sg_lb.id ]
   subnets = [ module.vpc_subnet_lb_a.id, module.vpc_subnet_lb_b.id ]
